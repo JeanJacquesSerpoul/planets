@@ -84,7 +84,7 @@
     }
 
     #accelerationDisplay {
-      left: 200px;
+      left: 150px;
       color: royalblue;
     }
 
@@ -148,8 +148,8 @@
   </div>
 
   <!-- Affichage de la vitesse et de l'accélération -->
-  <div id="velocityDisplay">Vitesse: 0</div>
-  <div id="accelerationDisplay">Accélération: 0 m/s²</div>
+  <div id="velocityDisplay">Vit.: 0</div>
+  <div id="accelerationDisplay">Acc.: 0 m/s²</div>
 
   <!-- Inclusion de Three.js via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -738,7 +738,7 @@
         launchObject.position.add(launchVelocity.clone().multiplyScalar(dt));
 
         const accelerationDisplay = document.getElementById("accelerationDisplay");
-        accelerationDisplay.textContent = "Accélération: " + sign + aMagnitude.toFixed(2) + " m/s²";
+        accelerationDisplay.textContent = "Acc.: " + sign + aMagnitude.toFixed(2) + " m/s²";
         if (sign === "–") {
           accelerationDisplay.style.color = "red";
         } else {
@@ -763,14 +763,14 @@
 
       if (launchObject && isLaunched) {
         const speed = launchVelocity.length();
-        document.getElementById("velocityDisplay").textContent = "Vitesse: " + speed.toFixed(2) + " m/s";
+        document.getElementById("velocityDisplay").textContent = "Vit.: " + speed.toFixed(2) + " m/s";
       } else {
-        document.getElementById("velocityDisplay").textContent = "Vitesse: 0 m/s";
+        document.getElementById("velocityDisplay").textContent = "Vit.: 0 m/s";
       }
 
       if (!(launchObject && isLaunched && !explosion)) {
         const accelerationDisplay = document.getElementById("accelerationDisplay");
-        accelerationDisplay.textContent = "Accélération: 0 m/s²";
+        accelerationDisplay.textContent = "Acc.: 0 m/s²";
         accelerationDisplay.style.color = "royalblue";
       }
 
